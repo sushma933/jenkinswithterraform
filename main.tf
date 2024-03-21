@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type          = "t2.large"
   key_name               = "hosadu"              #change key name as per your setup
   vpc_security_group_ids = [aws_security_group.Jenkins-VM-SG.id]
-  user_data              = file("${path.module}/install.sh", {})
+  user_data              = file("${path.module}/install.sh")
 
   tags = {
     Name = "Jenkins-SonarQube"
